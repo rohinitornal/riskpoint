@@ -11,15 +11,15 @@ Feature: Claims
   #      And User clicks on the link 'Start your claim here' on Report a Claim section
   #      Then User should be directed to Report a Claim Page
 
-    Scenario:
+    Scenario Outline:
         Given I am on Report a Claim page
-        When Users click on Accident Tab and clicks on languages
-        Then User should be able to see the heading
-        #Examples:
-        #    | Language | Expected_Heading  |
-        #    | Danish   | Ulykkesforsikring  |
-         #   | English  | Accident & Health  |
-         #   | Finnish  | Henkilövakuutukset  |
-         #   | Norwegian| Ulykkesforsikring  |
-         #   | Swedish  | Olycksfallsförsäkring  |
+        When Users click on Accident Tab and clicks on <Language>
+        Then User should be able to see the <Heading>
+        Examples:
+            | Language | Heading  |
+            | Danish   | Ulykkesforsikring  |
+            | English  | Accident & Health  |
+            | Finnish  | Henkilövakuutukset  |
+            | Norwegian| Ulykkesforsikring  |
+            | Swedish  | Olycksfallsförsäkring  |
 
