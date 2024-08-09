@@ -12,7 +12,7 @@ import time
 def step_impl(context):
     context.browser = webdriver.Chrome()
     context.browser.get('https://rpgroup.com')
-    context.browser.maximize_window()
+    #context.browser.maximize_window()
     context.browser.find_element(By.ID, "wpnordic-cookie-care-consent-all-button").click()
 
     claimelement = context.browser.find_element(By.XPATH, '//*[@id="menu-item-962"]/a')
@@ -29,11 +29,11 @@ def step_impl(context, Language):
     accele = context.browser.find_element(By.XPATH, "//div[@class='accordion-header']/h3[text()='Accident']")
     assert accele
 
-    accele.click()
-    time.sleep(3)
-
     ac = ActionChains(context.browser)
     ac.scroll_to_element(propertyelem).perform()
+
+    accele.click()
+    time.sleep(2)
 
     lang_list = ["Danish", "English", "Finnish", "Norwegian", "Swedish"]
     lindex = lang_list.index(Language) + 1
