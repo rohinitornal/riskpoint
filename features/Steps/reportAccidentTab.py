@@ -12,7 +12,7 @@ import time
 def step_impl(context):
     context.browser = webdriver.Chrome()
     context.browser.get('https://rpgroup.com')
-    #context.browser.maximize_window()
+    context.browser.maximize_window()
     context.browser.find_element(By.ID, "wpnordic-cookie-care-consent-all-button").click()
 
     claimelement = context.browser.find_element(By.XPATH, '//*[@id="menu-item-962"]/a')
