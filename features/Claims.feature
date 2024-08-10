@@ -1,4 +1,5 @@
 Feature: Claims
+
     Scenario:
         Given I am on the home page of 'rpgroup.com'
         When On the home page User hovers on Claims tab
@@ -23,3 +24,17 @@ Feature: Claims
             | Norwegian| Ulykkesforsikring  |
             | Swedish  | Olycksfallsförsäkring  |
 
+    Scenario: Verify that user enters no details in the form
+        Given I am on Claims Details Page/Form in Danish Language
+        When User does not enter any details in the form
+        And Clicks on Submit button
+        Then Error messages should be displayed in Red color for all the empty fields
+        And Form should not be submitted and user should be on the same details page
+
+
+    Scenario: Verify that user enters few details in the form and submits
+        Given I am on Claims Details Page/Form in Danish Language
+        When User enters few details in the form
+        And Clicks on Submit button
+        Then Error messages should be displayed in Red color only for empty fields
+        And Form should not be submitted and user should be on the same details page
