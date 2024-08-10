@@ -22,7 +22,7 @@ def step_impl(context):
     pass
 
 
-@when(u'User enters few details in the form')
+@when(u'Verify that user enters few details in the form and submits')
 def step_impl(context):
     navnEle = context.browser.find_element(By.ID, "input_12_22")
     navnEle.send_keys("gdf")

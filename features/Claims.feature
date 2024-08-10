@@ -1,18 +1,18 @@
 Feature: Claims
 
-    Scenario:
+    Scenario: Verify the Home Page of RiskPoint Group
         Given I am on the home page of 'rpgroup.com'
         When On the home page User hovers on Claims tab
         Then Emergency Contacts section should be displayed
         And Report a Claim section should be displayed
 
-    Scenario:
+    Scenario: Verify that the user is navigated to Report a Claim Page
         Given I am on the Report a claim section on home page
         When User clicks on the claims tab
         And User clicks on the link 'Start your claim here' on Report a Claim section
         Then User should be directed to Report a Claim Page
 
-    Scenario Outline:
+    Scenario Outline: Verify that the user is able to navigate to different Language pages
         Given I am on Report a Claim page
         When Users click on Accident Tab and clicks on <Language>
         Then User should be able to see the <Heading>
