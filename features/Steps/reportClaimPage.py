@@ -11,6 +11,7 @@ import time
 def step_impl(context):
     context.browser = webdriver.Chrome()
     context.browser.get('https://rpgroup.com')
+    context.browser.maximize_window()
     context.browser.find_element(By.ID, "wpnordic-cookie-care-consent-all-button").click()
     WebDriverWait(context.browser, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="menu-item-962"]/a'))
