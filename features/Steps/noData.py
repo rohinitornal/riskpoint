@@ -22,6 +22,15 @@ def step_impl(context):
     pass
 
 
+@when(u'User enters few details in the form')
+def step_impl(context):
+    navnEle = context.browser.find_element(By.ID, "input_12_22")
+    navnEle.send_keys("gdf")
+    teleNumEle = context.browser.find_element(By.ID, "input_12_12")
+    teleNumEle.send_keys("6765")
+    time.sleep(5)
+
+
 @when(u'Clicks on Submit button')
 def step_impl(context):
     submit = context.browser.find_element(By.ID, "gform_submit_button_12")
@@ -29,6 +38,24 @@ def step_impl(context):
     ac.scroll_to_element(submit).perform()
     assert submit
     submit.click()
+
+
+@then(u'Error messages should be displayed in Red color only for empty fields')
+def step_impl(context):
+    v_msgs = [
+              "validation_message_12_8",
+              "validation_message_12_27",
+              "validation_message_12_13",
+              "validation_message_12_17",
+              "validation_message_12_20",
+              "validation_message_12_21",
+              "validation_message_12_17",
+              "validation_message_12_18"]
+
+    for msg in v_msgs:
+        WebDriverWait(context.browser, 3).until(
+            EC.presence_of_element_located((By.ID, msg))
+        )
 
 
 @then(u'Error messages should be displayed in Red color for all the empty fields')
