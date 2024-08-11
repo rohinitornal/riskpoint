@@ -1,12 +1,12 @@
 # Feature: demo
-#    Scenario Outline:
-#        Given I am on Report a Claim page
-#        When Users click on Accident Tab and clicks on <Language>
-#        Then User should be able to see the <Heading>
+#   Scenario Outline: Verify that the user is able to navigate to different Language pages
+#        Given I am on the Report a Claim page
+#        When User clicks on the Accident Tab and selects <Language>
+#        Then The correct page with heading <Heading> should be displayed
 #        Examples:
-#            | Language | Heading  |
-#            | Danish   | Ulykkesforsikring  |
-#            | English  | Accident & Health  |
-#            | Finnish  | Henkilövakuutukset  |
-#            | Norwegian| Ulykkesforsikring  |
-#            | Swedish  | Olycksfallsförsäkring  |
+#            | Language    | Heading               |
+#            | Danish      | Ulykkesforsikring     |
+#            | English     | Accident & Health     |
+#            | Finnish     | Henkilövakuutukset    |
+#            | Norwegian   | Ulykkesforsikring     |
+#            | Swedish     | Olycksfallsförsäkring |
